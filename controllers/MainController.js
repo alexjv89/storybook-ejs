@@ -8,7 +8,7 @@ module.exports={
 			story:req.query.story,
 		}
 		// console.log(locals);
-		ejs.renderFile('.stories/views/landing_page.ejs', locals, function(err, str) {
+		ejs.renderFile('.storybook/views/landing_page.ejs', locals, function(err, str) {
 			var html ='';
 		    if (!err)
 	    		html = str;
@@ -43,7 +43,7 @@ module.exports={
 		}
 		// console.log(locals);
 		
-		ejs.renderFile('.stories/views/load_component.ejs', locals, function(err, str) {
+		ejs.renderFile('.storybook/views/load_component.ejs', locals, function(err, str) {
 			var html ='';
 		    if (!err)
 	    		html = str;

@@ -2,7 +2,7 @@
 // load it in the memory
 // serve them on ]
 
-// always run this from the main repo folder. Not from .stories folder
+// always run this from the main repo folder. Not from .storybook folder
 
 
 
