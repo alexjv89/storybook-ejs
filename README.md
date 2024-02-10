@@ -26,7 +26,7 @@ we suggest installing this into a folder called `.storybook`.
 
 Add this to your main repo's `package.json`
 ```shell
-	'storybook':'node .stories/index.js',
+	"storybook":"node .storybook/index.js",
 ```
 
 ### Run storybook
