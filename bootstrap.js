@@ -27,10 +27,10 @@ app.config={
   components:[]
 };
 files.forEach(function(file){
-	if(file.indexOf('.storybook.')>-1){
+	if(file.indexOf('.stories.')>-1){
     var component = require('../'+file);
-    component.template=file.split(storiesFolder+'/')[1].split('.storybook.')[0]+'.ejs';
-    component.slug=file.split('.storybook.')[0].split(storiesFolder+'/')[1];
+    component.template=file.split(storiesFolder+'/')[1].split('.stories.')[0]+'.ejs';
+    component.slug=file.split('.stories.')[0].split(storiesFolder+'/')[1];
 		app.config.components.push(component);
   }
 })
