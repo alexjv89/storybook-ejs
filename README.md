@@ -29,6 +29,11 @@ Add this to your main repo's `package.json`
 	"storybook":"node .storybook/index.js",
 ```
 
+### Install dependencies
+```shell
+cd .storybook && npm install
+```
+
 ### Run storybook
 
 ```shell
