@@ -24,7 +24,7 @@ const MainController = require('./controllers/MainController');
 // --------------------    Setup routes.   --------------------
 app.get('/', MainController.viewPage);
 app.get('/embed', MainController.embedComponent);
-app.use(express.static('assets')); // loads all the assets from /assets folder
+app.use(express.static('.storybook/assets')); // loads all the assets from /assets folder
 
 // --------------------        Done        --------------------
 
