@@ -1,40 +1,36 @@
 var ejs=require('ejs');
 module.exports={
 	viewPage:function(req,res){
-		// console.log('view page');
+		console.log('view page');
 		var props={};
-		var component;
+		var component,story;
 		app.config.components.forEach(function(c){
 			if(c.slug==req.query.component){
 				component=c;
 				c.stories.forEach(function(s){
-					if(s.slug==req.query.story)
+					if(s.slug==req.query.story){
+						story=s;
 						props=s.args;
+					}
 				})
 			}
 		})
-		console.log(component.slug);
+		// console.log(component.slug);
 		var locals={
 			component:req.query.component,
 			story:req.query.story,
 			props:props, // props for the component
 			docs:'No documentation yet for this component',
 		}
-		// var doc_file_content = fs.readSync
-		// console.log(process.cwd());
-		var fs = require('fs');
-		var doc_file=process.cwd()+'/views/'+component?.slug+'.md';
-		// console.log(doc_file);
-		if (fs.existsSync(doc_file)) {
-			// console.log(component?.slug+'.md - file exists');
-			var markdownit = require('markdown-it');
-			const md = markdownit();
-			var file = fs.readFileSync(doc_file).toString();
-			// console.log(file);
-			locals.docs = md.render(file);
-			// console.log(locals.docs);
-			
-		}
+		
+		// console.log(component.docs);
+		var markdownit = require('markdown-it');
+		const md = markdownit();
+		var docs = '## Component docs:\n'+component.docs+'\n\n## Story docs:\n'+story.docs;
+		// locals.docs = md.render(file);
+		locals.docs = md.render(docs);
+		// console.log(locals.docs);
+
 		
 		// console.log(locals);
 		ejs.renderFile('.storybook/views/landing_page.ejs', locals, function(err, str) {
@@ -47,7 +43,7 @@ module.exports={
 		});
 	},
 	embedComponent:function(req,res){
-		// console.log('view component');
+		console.log('view component');
 		// var component = 'partials/test.ejs'
 
 
