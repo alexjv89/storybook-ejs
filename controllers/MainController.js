@@ -26,7 +26,7 @@ module.exports={
 		// console.log(component.docs);
 		var markdownit = require('markdown-it');
 		const md = markdownit();
-		var docs = '## Component docs:\n'+component.docs+'\n\n## Story docs:\n'+story.docs;
+		var docs = '## Component docs:\n'+component?.docs+'\n\n## Story docs:\n'+story?.docs;
 		// locals.docs = md.render(file);
 		locals.docs = md.render(docs);
 		// console.log(locals.docs);
