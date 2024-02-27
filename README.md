@@ -40,4 +40,5 @@ cd .storybook && npm install
 npm run storybook
 ```
 
-
+## Docs
+Link - [/docs](/docs)
