@@ -41,4 +41,4 @@ npm run storybook
 ```
 
 ## Docs
-Link - [/docs](/docs)
+Link - [/docs](/docs/index.md)
