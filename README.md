@@ -1,4 +1,5 @@
 # storybook-ejs - About
+Links - [/docs](/docs/index.md), [website](https://www.echoalex.com/projects/storybook-ejs)
 
 This is a alternative to storybook. This helps you write documentation and map out scenarios for your ejs templates. 
 
@@ -40,5 +41,3 @@ cd .storybook && npm install
 npm run storybook
 ```
 
-## Docs
-Link - [/docs](/docs/index.md)
