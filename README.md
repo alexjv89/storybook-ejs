@@ -1,5 +1,5 @@
 # storybook-ejs - About
-Links - [/docs](/docs/index.md), [website](https://www.echoalex.com/projects/storybook-ejs)
+Links - [Docs](/docs/index.md), [Website](https://www.echoalex.com/projects/storybook-ejs)
 
 This is a alternative to storybook. This helps you write documentation and map out scenarios for your ejs templates. 
 
