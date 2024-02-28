@@ -28,10 +28,10 @@
     </div>
     <!-- Main body -->
     <div class='ui basic segment'>
-    	<div class='ui grid'>
-    		<div class='three wide column'>
-    			<div class='ui segment'>
-    				<div class="ui styled accordion">
+      <div class='ui grid'>
+        <div class='three wide column'>
+          <div class='ui segment'>
+            <div class="ui styled accordion">
               <% app.config.components.forEach(function(c){ %>
                 <div class="<%-c.slug==component?'active':''%> title">
                   <i class="dropdown icon"></i>
@@ -58,9 +58,9 @@
                 </div>
               <%}%>
             </div>
-    			</div>
-    		</div>
-    		<div class='thirteen wide column'>
+          </div>
+        </div>
+        <div class='thirteen wide column'>
           <%
             var tab ='component';
           %>
@@ -100,14 +100,24 @@
 
           </div>
           <div class="ui <%=tab=='docs'?'active':''%> tab" data-tab="docs">
-            <div class='ui segment'>
-              <%-docs%>
+            <div class='ui top attached teal segment'>
+              <h3>Component docs</h3>
+            </div>
+            <div class='ui bottom attached  segment'>
+              <%-docs.component%>
+            </div>
+
+            <div class='ui top attached teal segment'>
+              <h3>Story docs</h3>
+            </div>
+            <div class='ui bottom attached segment'>
+              <%-docs.story%>
             </div>
           </div>
           
           
-    		</div>
-    	</div>
+        </div>
+      </div>
     </div>
   </body>
 </html>

@@ -17,23 +17,18 @@ module.exports={
 			}
 		})
 		// console.log(component.slug);
+		var markdownit = require('markdown-it');
+		const md = markdownit();
 		var locals={
 			component:req.query.component,
 			story:req.query.story,
 			props:props, // props for the component
-			docs:'No documentation yet for this component',
+			docs:{
+				component:md.render(GeneralService.cleanMD(component?.docs||'Component documentation missing')),
+				story:md.render(GeneralService.cleanMD(story?.docs||'Story documentation missing')),
+			}
 		}
 		
-		// console.log(component.docs);
-		var markdownit = require('markdown-it');
-		const md = markdownit();
-		var docs = '## Component docs:\n'+GeneralService.cleanMD(component?.docs)+'\n\n## Story docs:\n'+GeneralService.cleanMD(story?.docs);
-		// locals.docs = md.render(file);
-		locals.docs = md.render(docs);
-		// console.log(locals.docs);
-
-		
-		// console.log(locals);
 		ejs.renderFile('.storybook/views/landing_page.ejs', locals, function(err, str) {
 			var html ='';
 		    if (!err)
