@@ -1,6 +1,32 @@
 ## docs
 
 
+### Sample component definition
+```js
+module.exports={
+	name:'Component name',
+	stories:[
+		{
+			name:'story name',
+			slug:'unique_slug',	
+			args:{}, // props
+			description:'',
+			docs:`
+				### story 1
+				Write documentation for this particular story here.
+			`
+		},
+		{...}
+	],
+	docs:`
+		Write component docs here.
+		### Markdown support
+		Markdown is supported here. 
+	`
+}
+```
+
+
 ### Component definition
 | key | description | type | required | default value |
 |---|---|---|---|---|

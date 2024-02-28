@@ -1,4 +1,5 @@
 var ejs=require('ejs');
+var GeneralService=require('../services/GeneralService.js');
 module.exports={
 	viewPage:function(req,res){
 		console.log('view page');
@@ -26,7 +27,7 @@ module.exports={
 		// console.log(component.docs);
 		var markdownit = require('markdown-it');
 		const md = markdownit();
-		var docs = '## Component docs:\n'+component?.docs+'\n\n## Story docs:\n'+story?.docs;
+		var docs = '## Component docs:\n'+GeneralService.cleanMD(component?.docs)+'\n\n## Story docs:\n'+GeneralService.cleanMD(story?.docs);
 		// locals.docs = md.render(file);
 		locals.docs = md.render(docs);
 		// console.log(locals.docs);
